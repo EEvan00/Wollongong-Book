@@ -143,3 +143,35 @@ addEventOnElem(filterBtn, "click", filter);
     });
   });
 })();
+
+
+// Navigate to book detail when a product card is clicked
+(() => {
+  const bookCards = document.querySelectorAll("[data-book-link]");
+  if (!bookCards.length) return;
+
+  bookCards.forEach(card => {
+    card.addEventListener("click", event => {
+      if (event.target.closest("button")) return;
+      const targetLink = card.dataset.bookLink;
+      if (!targetLink) return;
+      window.location.href = targetLink;
+    });
+  });
+})();
+
+
+// Navigate to blog article when a blog card is clicked
+(() => {
+  const articleCards = document.querySelectorAll("[data-article-link]");
+  if (!articleCards.length) return;
+
+  articleCards.forEach(card => {
+    card.addEventListener("click", event => {
+      if (event.target.closest("a")) return;
+      const targetLink = card.dataset.articleLink;
+      if (!targetLink) return;
+      window.location.href = targetLink;
+    });
+  });
+})();
