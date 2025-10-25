@@ -1366,12 +1366,16 @@ body {
 
 .offer { text-align: center; }
 
+.offer:first-of-type {
+  margin-block-start: clamp(110px, 18vw, 160px);
+}
+
 .offer .section-subtitle { font-size: var(--fs-3); }
 
 .offer .section-title {
   --fs-2: 3rem;
   color: var(--maximum-blue-green);
-  margin-block: 20px 30px;
+  margin-block: 50px 30px;
 }
 
 .countdown-list {
@@ -2037,3 +2041,4 @@ body {
   }
 
 }
+#promo { color: red !important;}
